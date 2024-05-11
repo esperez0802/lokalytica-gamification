@@ -1,15 +1,8 @@
 import React from 'react'
-import Image from 'next/image'
-import Logo from '../../public/logo.png'
-
-const Login = () => {
+import LoginForm from '@/components/LoginForm';
+  
+export default function Login () {
   return (
-    <header className="header">
-      <div className="logo">
-        <Image src={Logo} alt="Lokalytica Logo"/>
-      </div>
-    </header>
-  )
+    <LoginForm />
+  );
 }
-
-export default Login

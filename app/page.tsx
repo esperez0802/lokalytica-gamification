@@ -14,6 +14,7 @@ export default function Home() {
           <Image src={Logo} alt="Lokalytica Logo"/>
         </div>
         <div className="links">
+          <Link href="/">Home</Link>
           <Link href="/about">About</Link>
           <Link href="/leaderboard">Leaderboard</Link>
           <Link href="/login">Login</Link>
