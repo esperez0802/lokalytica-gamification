@@ -2,6 +2,9 @@ import Head from 'next/head';
 import Image from 'next/image'
 import Link from 'next/link'
 import Logo from '../public/logo.png'
+// import { getServerSession } from "next-auth";
+// import { redirect } from "next/navigation";
+// import { authOptions } from './api/auth/[...nextauth]/route';
 
 export default function Home() {
   return (
