@@ -27,10 +27,6 @@ export default function UserInfo() {
 
   const handleGenerateChallenge = () => {
     generateChallenge();
-    // Here you can collect power consumption data per day and update the state
-    // Example:
-    // const powerConsumption = ... // Logic to collect power consumption data
-    // setPowerConsumptionData([...powerConsumptionData, powerConsumption]);
   };
 
   return (

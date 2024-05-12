@@ -36,7 +36,6 @@ export default async function LeaderboardPage() {
     }
   ];
 
-  // Sort users by average power consumption
   userData.sort((a, b) => calculateAveragePowerConsumption(a.powerConsumption) - calculateAveragePowerConsumption(b.powerConsumption));
 
   return (
