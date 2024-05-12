@@ -21,7 +21,7 @@ export default async function AboutPage() {
         <div>
           <Link href="/" className="links">Home</Link>
           <Link href="/about" className="currentPage">About</Link>
-          <Link href="/leaderboard" className="links">Leaderboard</Link>
+          {session &&<Link href="/leaderboard" className="links">Leaderboard</Link>}
           {!session && <Link href="/login" className="links">Login</Link>}
           {session && <Link href="/dashboard"><span style = {{ fontWeight: 700}} className="links">Welcome, {session?.user?.name}</span></Link>}
         </div>
