@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 
 export default function RegisterForm() {
 
-    const [fullname, setFullname] = useState("");
+    const [name, setName] = useState("");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -20,7 +20,7 @@ export default function RegisterForm() {
     const handleSubmit = async(e) => {
       e.preventDefault();
 
-      if(!fullname || !username || !email || !password){
+      if(!name || !username || !email || !password){
         setError("All fields are necessary.");
         return;
       }
@@ -48,7 +48,7 @@ export default function RegisterForm() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            fullname,
+            name,
             username, 
             email, 
             password,
@@ -78,11 +78,11 @@ export default function RegisterForm() {
         <div className="logo">
           <Image src={Logo} alt="Lokalytica Logo"/>
         </div>
-        <div className="links">  
-          <Link href="/">Home</Link>  
-          <Link href="/about">About</Link>
-          <Link href="/leaderboard">Leaderboard</Link>
-          <Link href="/login">Login</Link>
+        <div>
+          <Link href="/" className="links">Home</Link>
+          <Link href="/about" className="links">About</Link>
+          <Link href="/leaderboard" className="links">Leaderboard</Link>
+          <Link href="/register" className="currentPage">Register</Link>
         </div>
       </header>
       <div className="grid place-items-center h-screen">
@@ -90,7 +90,7 @@ export default function RegisterForm() {
           <h1 className="text-xl font-bold my-4">Register</h1>
         
           <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-            <input onChange={e => setFullname(e.target.value)}type="text" placeholder="Full Name" />
+            <input onChange={e => setName(e.target.value)}type="text" placeholder="Full Name" />
             <input onChange={e => setUsername(e.target.value)}type="text" placeholder="Username" />
             <input onChange={e => setEmail(e.target.value)}type="text" placeholder="Email" />
             <input onChange={e => setPassword(e.target.value)}type="password" placeholder="Password" />

@@ -1,15 +1,8 @@
 import React from 'react'
-import Image from 'next/image'
-import Logo from '../../public/logo.png'
-
-const About = () => {
+import AboutPage from '@/components/AboutPage';
+  
+export default function About () {
   return (
-    <header className="header">
-      <div className="logo">
-        <Image src={Logo} alt="Lokalytica Logo"/>
-      </div>
-    </header>
-  )
+    <AboutPage />
+  );
 }
-
-export default About

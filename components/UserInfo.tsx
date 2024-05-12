@@ -20,11 +20,11 @@ export default function UserInfo() {
         <div className="logo">
           <Image src={Logo} alt="Lokalytica Logo"/>
         </div>
-        <div className="links">  
-          <Link href="/">Home</Link>  
-          <Link href="/about">About</Link>
-          <Link href="/leaderboard">Leaderboard</Link>
-          <Link href="/">Logout</Link>
+        <div>  
+          <Link href="/" className="links">Home</Link>
+          <Link href="/about" className="links">About</Link>
+          <Link href="/leaderboard" className="links">Leaderboard</Link>
+          <Link href="/dashboard"><span style = {{ fontWeight: 700}} className="currentPage">Welcome, {session?.user?.name}</span></Link>
         </div>
       </header>
       <div className="grid place-items-center h-screen">

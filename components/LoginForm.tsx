@@ -47,11 +47,11 @@ export default function LoginForm() {
         <div className="logo">
           <Image src={Logo} alt="Lokalytica Logo"/>
         </div>
-        <div className="links">
-          <Link href="/">Home</Link>  
-          <Link href="/about">About</Link>
-          <Link href="/leaderboard">Leaderboard</Link>
-          <Link href="/login">Login</Link>
+        <div>
+          <Link href="/" className="links">Home</Link>
+          <Link href="/about" className="links">About</Link>
+          <Link href="/leaderboard" className="links">Leaderboard</Link>
+          <Link href="/login" className="currentPage">Login</Link>
         </div>
       </header>
       <div className="grid place-items-center h-screen">
@@ -71,7 +71,7 @@ export default function LoginForm() {
           )}
             
 
-            <Link className="text-sm mt-3 text-right" href={'/register'}>
+            <Link href='/register' className="text-sm mt-3 text-right">
               Don't have an account? <span className="underline">
                 Register</span>
             </Link>

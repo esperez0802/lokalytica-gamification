@@ -1,12 +1,12 @@
-import Head from 'next/head';
 import Image from 'next/image'
-import Link from 'next/link'
 import Logo from '../public/logo.png'
+import Link from 'next/link'
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
-import { authOptions } from './api/auth/[...nextauth]/route';
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import Head from 'next/head';
 
-export default async function Home() {
+export default async function LeaderboardPage() {
   const session = await getServerSession(authOptions);
 
   return (
@@ -19,21 +19,13 @@ export default async function Home() {
           <Image src={Logo} alt="Lokalytica Logo"/>
         </div>
         <div>
-          <Link href="/" className="currentPage">Home</Link>
+          <Link href="/" className="links">Home</Link>
           <Link href="/about" className="links">About</Link>
-          <Link href="/leaderboard" className="links">Leaderboard</Link>
+          <Link href="/leaderboard" className="currentPage">Leaderboard</Link>
           {!session && <Link href="/login" className="links">Login</Link>}
           {session && <Link href="/dashboard"><span style = {{ fontWeight: 700}} className="links">Welcome, {session?.user?.name}</span></Link>}
         </div>
       </header>
-      <main className="px-3 mt-50 h-[80vh] flex flex-col justify-center items-center">
-        <div className='font-sans text-5xl font-semibold lg:text-center text-yellow-400'>
-          Powering Efficiency,<br/>Empowering Tomorrow.
-        </div>
-        <p className='font-sans text-xl text-center mt-8'>
-          Leading the way for local energy management and conservation.
-        </p>
-      </main>
-    </div>
+    </div>  
   )
 }

@@ -39,8 +39,21 @@ body {
 }
 
 .links {
-  display: flex;
   gap: 20px;
+  padding: 10px;
+  text-decoration: none;
+  color: #d5d5d5;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+.currentPage {
+  gap: 20px;
+  padding: 10px;
+  text-decoration: none;
+  color: #f9c702;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
 }
 
 .links a {
@@ -52,5 +65,17 @@ body {
 
 .links a:hover {
   color: #f9c702;
+}
+
+.textbox {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  width: 900px;
+  margin: 0 auto;
+  padding-top: 20rem;
+  font-size: 1rem;
+  line-height: 1.75rem;
 }
 
