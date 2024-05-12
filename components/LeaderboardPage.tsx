@@ -36,7 +36,11 @@ export default async function LeaderboardPage() {
     }
   ];
 
-  userData.sort((a, b) => calculateAveragePowerConsumption(a.powerConsumption) - calculateAveragePowerConsumption(b.powerConsumption));
+  userData.forEach(user => {
+    user.points = calculatePoints(user.powerConsumption);
+  });
+
+  userData.sort((a, b) => b.points - a.points);
 
   return (
     <div>
@@ -62,7 +66,7 @@ export default async function LeaderboardPage() {
             <tr>
               <th>Rank</th>
               <th>Name</th>
-              <th>Average Power Consumption (kWh)</th>
+              <th>Points</th>
             </tr>
           </thead>
           <tbody>
@@ -70,7 +74,7 @@ export default async function LeaderboardPage() {
               <tr key={user.userId}>
                 <td>{index + 1}</td>
                 <td>{user.name}</td>
-                <td>{calculateAveragePowerConsumption(user.powerConsumption).toFixed(2)}</td>
+                <td>{Math.round(user.points)}</td>
               </tr>
             ))}
           </tbody>
@@ -78,6 +82,11 @@ export default async function LeaderboardPage() {
       </main>
     </div>  
   )
+}
+
+const calculatePoints = (powerConsumption) => {
+  const averagePowerConsumption = calculateAveragePowerConsumption(powerConsumption);
+  return averagePowerConsumption / 0.5; // Assuming 0.5 is the conversion factor
 }
 
 const calculateAveragePowerConsumption = (powerConsumption) => {
