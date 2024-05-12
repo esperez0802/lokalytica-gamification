@@ -1,10 +1,10 @@
-import Image from 'next/image'
-import Logo from '../public/logo.png'
-import Link from 'next/link'
+import Image from "next/image"
+import Logo from "../public/logo.png"
+import Link from "next/link"
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
-import Head from 'next/head';
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import Head from "next/head";
 
 export default async function LeaderboardPage() {
   const session = await getServerSession(authOptions);

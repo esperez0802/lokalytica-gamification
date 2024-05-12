@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import Head from 'next/head';
-import Image from 'next/image'
-import Logo from '../public/logo.png'
+import Head from "next/head";
+import Image from "next/image"
+import Logo from "../public/logo.png"
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import { useState } from "react";

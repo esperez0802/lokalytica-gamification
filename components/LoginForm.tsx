@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import Head from 'next/head';
+import Head from "next/head";
 import Link from "next/link";
-import Image from 'next/image'
-import Logo from '../public/logo.png'
-import { useState } from 'react';
-import { signIn } from 'next-auth/react';
+import Image from "next/image"
+import Logo from "../public/logo.png"
+import { useState } from "react";
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 
 export default function LoginForm() {
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const router = useRouter();
 
@@ -21,7 +21,7 @@ export default function LoginForm() {
     e.preventDefault();
 
     try {
-      const res = await signIn('credentials', {
+      const res = await signIn("credentials", {
         email, 
         password, 
         redirect: false,
@@ -71,7 +71,7 @@ export default function LoginForm() {
           )}
             
 
-            <Link href='/register' className="text-sm mt-3 text-right">
+            <Link href="/register" className="text-sm mt-3 text-right">
               Don't have an account? <span className="underline">
                 Register</span>
             </Link>

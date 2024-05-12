@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
 import Link from "next/link";
-import Head from 'next/head';
-import Image from 'next/image'
-import Logo from '../public/logo.png'
+import Head from "next/head";
+import Image from "next/image"
+import Logo from "../public/logo.png"
 import { useState } from "react"
 import { useRouter } from "next/navigation";
 
@@ -104,7 +104,7 @@ export default function RegisterForm() {
             </div>
             )}
 
-            <Link className="text-sm mt-3 text-right" href={'/login'}>
+            <Link className="text-sm mt-3 text-right" href={"/login"}>
               Already have an account? <span className="underline">
                 Login</span>
             </Link>
