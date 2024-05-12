@@ -6,10 +6,32 @@ import Image from 'next/image'
 import Logo from '../public/logo.png'
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
+import { useState } from "react";
 
 export default function UserInfo() {
 
   const {data:session} = useSession();
+  const [challenge, setChallenge] = useState<string | null>(null);
+  const [powerConsumptionData, setPowerConsumptionData] = useState<number[]>([]);
+
+  const generateChallenge = () => {
+    const challenges: string[] = [
+      "Reduce daily consumption by 2% every day for 7 days.",
+      "Reduce monthly consumption by 20%.",
+      "Maintain a total weekly consumption of 1,000 kWh or less this week.",
+    ];
+    const randomIndex = Math.floor(Math.random() * challenges.length);
+    const randomChallenge = challenges[randomIndex];
+    setChallenge(randomChallenge);
+  };
+
+  const handleGenerateChallenge = () => {
+    generateChallenge();
+    // Here you can collect power consumption data per day and update the state
+    // Example:
+    // const powerConsumption = ... // Logic to collect power consumption data
+    // setPowerConsumptionData([...powerConsumptionData, powerConsumption]);
+  };
 
   return (
     <div>
@@ -38,9 +60,15 @@ export default function UserInfo() {
           <button onClick={() => signOut()} className="bg-red-500 text-white font-bold px-6 py-2 mt-3">
             Log Out
           </button>
-          <button /*onClick={}*/ className="bg-yellow-500 text-white font-bold px-6 py-2 mt-3">
+          <button onClick={handleGenerateChallenge} className="bg-yellow-500 text-white font-bold px-6 py-2 mt-3">
             Generate Challenge
           </button>
+          {challenge && (
+            <div className="my-4">
+              <h3>Generated Challenge:</h3>
+              <p>{challenge}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
