@@ -27,6 +27,7 @@
     "typescript": "5.4.5"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "daisyui": "^4.11.1"
   }
 }
